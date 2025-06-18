@@ -1,4 +1,4 @@
-package design.patterns.singleton;
+package design.patterns.creational.singleton;
 
 
 import java.util.Date;
