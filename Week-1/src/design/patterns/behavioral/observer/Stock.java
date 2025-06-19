@@ -1,4 +1,4 @@
-package design.patterns.behavioral;
+package design.patterns.behavioral.observer;
 
 public interface Stock {
     void registerObserver(Observer observer);

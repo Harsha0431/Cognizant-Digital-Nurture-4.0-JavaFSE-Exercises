@@ -1,4 +1,4 @@
-package design.patterns.behavioral;
+package design.patterns.behavioral.observer;
 
 /*
 * Observer is a **behavioral design pattern** that lets you define a subscription mechanism to notify multiple objects
@@ -10,7 +10,7 @@ public class ObserverTest {
         StockMarket stockMarket = new StockMarket();
 
         Observer mobileApp1 = new MobileApp("User1");
-        Observer webApp1 = new WebApp("TraderPro");
+        Observer webApp1 = new WebApp("User2");
 
         stockMarket.registerObserver(mobileApp1);
         stockMarket.registerObserver(webApp1);
