@@ -1,17 +1,35 @@
 package tests;
 import junit_testing.Calculator;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 
 public class CalculatorTest {
+    private static Calculator calc;
+
+    @BeforeAll
+    public static void initiateCalcObject(){
+        if(calc == null){
+            System.out.println("Calculator object initiated.");
+            calc = new Calculator();
+        }
+    }
+
+    @AfterAll
+    public static void destroyCalculatorObject(){
+        if(calc!=null){
+            calc = null;
+            System.gc();
+            System.out.println("Calculator object removed from Garbage Collector.");
+        }
+    }
 
     @Test
     public void testAdd(){
-        Calculator calc = new Calculator();
         Assertions.assertEquals(5, calc.add(2, 3));
+
+        System.out.println("Tested addition feature of calculator.");
     }
 
     @ParameterizedTest
@@ -23,8 +41,8 @@ public class CalculatorTest {
             "10, 6"
     })
     public void testSubtract(int a, int b){
-        Calculator calc = new Calculator();
         Assertions.assertEquals(a-b, calc.subtract(a, b));
+        System.out.println("Tested subtraction feature of calculator.");
     }
 
 //    @Test
