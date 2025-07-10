@@ -16,9 +16,6 @@ public class SpringLearnApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLearnApplication.class, args);
-		// displayDate();
-		// displayDateWithLogger();
-		displayCountry();
 	}
 
 	private static void displayDate(){
