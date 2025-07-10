@@ -9,4 +9,22 @@
         <property name="name" value="India" />
     </bean>
 
+    <bean id="countryList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <bean class="com.cognizant.spring_learn.Country">
+                    <property name="name" value="India" />
+                    <property name="code" value="IN" />
+                </bean>
+                <bean class="com.cognizant.spring_learn.Country">
+                    <property name="name" value="United States" />
+                    <property name="code" value="US" />
+                </bean>
+                <bean class="com.cognizant.spring_learn.Country">
+                    <property name="name" value="Germany" />
+                    <property name="code" value="DE" />
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
 </beans>
