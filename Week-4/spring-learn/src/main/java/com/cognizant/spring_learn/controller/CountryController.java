@@ -15,19 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/country")
 public class CountryController {
     @Autowired
     private CountryService countryService;
     private static final Logger logger = LoggerFactory.getLogger(CountryController.class);
 
     @GetMapping
+    @RequestMapping("/country")
     public Country getCountryIndia(){
         ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
         return context.getBean("country", Country.class);
     }
 
-    @GetMapping("{code}")
+    @GetMapping("/country/{code}")
     public Country getCountry(@PathVariable String code){
         try{
             return countryService.getCountry(code);
@@ -36,5 +36,11 @@ public class CountryController {
             logger.error(e.toString());
             return null;
         }
+    }
+
+    @GetMapping
+    @RequestMapping("/countries")
+    public List<Country> getCountriesList(){
+        return countryService.getCountriesList();
     }
 }

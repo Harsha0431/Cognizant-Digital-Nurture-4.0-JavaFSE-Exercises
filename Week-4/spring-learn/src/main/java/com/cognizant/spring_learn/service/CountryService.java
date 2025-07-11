@@ -19,4 +19,9 @@ public class CountryService {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Country not found with code: " + code));
     }
+
+    public List<Country> getCountriesList(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+        return context.getBean("countryList", List.class);
+    }
 }
