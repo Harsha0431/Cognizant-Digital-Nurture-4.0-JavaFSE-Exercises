@@ -1,0 +1,1 @@
+Here, .log and log folders are pushed to remote repository as they are listed in .gitignore
