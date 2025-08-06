@@ -1,0 +1,1 @@
+Created new branch `GitNewBranch` and committed this file in this new branch. Then, merged this new branch in main.
